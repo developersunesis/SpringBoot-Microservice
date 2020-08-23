@@ -11,26 +11,27 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DogController {
 
-    @Autowired
-    DogService dogService;
+    // Ignore this file if using spring data rest
+//    @Autowired
+//    DogService dogService;
 
-    @GetMapping("/dogs")
-    public ResponseEntity<?> getAllDogBreeds(){
-        return ResponseEntity.ok(dogService.retrieveDogBreed());
-    }
-
-    @GetMapping("/dog/{id}/breed")
-    public ResponseEntity<?> getAllDogBreedById(@PathVariable long id){
-        try {
-            return ResponseEntity.ok(dogService.retrieveDogBreedById(id));
-        }catch (NullPointerException nullPointerException){
-            return new ResponseEntity<>("Dog with id : " + id + " not found",
-                    HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @GetMapping("/dog/name")
-    public ResponseEntity<?> getAllDogNames(){
-        return ResponseEntity.ok(dogService.retrieveDogNames());
-    }
+//    @GetMapping("/dogs")
+//    public ResponseEntity<?> getAllDogBreeds(){
+//        return ResponseEntity.ok(dogService.retrieveDogBreed());
+//    }
+//
+//    @GetMapping("/dog/{id}/breed")
+//    public ResponseEntity<?> getAllDogBreedById(@PathVariable long id){
+//        try {
+//            return ResponseEntity.ok(dogService.retrieveDogBreedById(id));
+//        }catch (NullPointerException nullPointerException){
+//            return new ResponseEntity<>("Dog with id : " + id + " not found",
+//                    HttpStatus.NOT_FOUND);
+//        }
+//    }
+//
+//    @GetMapping("/dog/name")
+//    public ResponseEntity<?> getAllDogNames(){
+//        return ResponseEntity.ok(dogService.retrieveDogNames());
+//    }
 }
